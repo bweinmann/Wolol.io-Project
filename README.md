@@ -11,11 +11,15 @@ This project will allow the user to select any civilization in Age of Empires II
 
 ## API and Data Sample
 
-https://age-of-empires-2-api.herokuapp.com/docs/
+https://age-of-empires-2-api.herokuapp.com/api/v1/civilizations
 
 ## Wireframes
 
-Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
+-Desktop wireframe
+https://git.generalassemb.ly/bweinmann/Unit_1-Project/blob/master/Wolol.io%20desktop%20wireframe.png
+
+-Mobile wireframe
+https://git.generalassemb.ly/bweinmann/Unit_1-Project/blob/master/Wolol.io%20mobile%20wireframe.png
 
 ### MVP/PostMVP
 
