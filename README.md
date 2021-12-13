@@ -56,6 +56,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 ## Priority Matrix
 
+https://git.generalassemb.ly/bweinmann/Unit_1-Project/blob/master/Priority%20Matrix%20(2).png
 
 ## Timeframes
 
