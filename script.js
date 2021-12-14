@@ -13,22 +13,25 @@ async function fetchCivInfo() {
     const res = await axios.get(`https://boiling-mountain-84087.herokuapp.com/${url}`);
     const civilizationData = res.data.civilizations;
     console.log(res.data);
+    console.log(typeof res.data.civilizations);
+    console.log(typeof res.data.civilizations[0].civilization_bonus);
     // console.log(civilizationData[0].unique_tech);
     civilizationData.forEach((civObject) => {
     showCivilizationInfo(civObject);
     })
   } catch(error) {
-    displayErrorMessage();
+    console.error(error);
+    // displayErrorMessage();
   }
 }
   fetchCivInfo();
 
-  function displayErrorMessage() {
-    const errorImage = document.createElement("img");
-    errorImage.src = "Assets/AOE-error.png"
-    errorImage.alt = "404 install error"
-    civilizationContainer.appendChild("errorImage");
-  }
+  // function displayErrorMessage() {
+  //   const errorImage = document.createElement("img");
+  //   errorImage.src = "Assets/AOE-error.png"
+  //   errorImage.alt = "404 install error"
+  //   civilizationContainer.appendChild("errorImage");
+  // }
 
   //we need to loop through the civilizations array [0] through [32] to access the values.
   //note this should be inside the fetchCivInfo function
@@ -59,12 +62,12 @@ async function fetchCivInfo() {
     // civilizationTwoAspects.appendChild(civilizationTwoInfo);
   }
 
-  const searchFormOne = document.querySelector("civ-1-menu");
+  const searchFormOne = document.querySelector(".civ-1-menu");
   // const searchFormTwo = document.querySelector("civ-2-menu");
-  const searchInputOne = document.querySelector("civilization-1");
+  const searchInputOne = document.querySelector(".civilization-1");
   // const searchInputTwo = document.querySelector("civilization-2");
 
-  searchForm.addEventListener("submit", handleSubmit);
+  searchFormOne.addEventListener("submit", handleSubmit);
 
   function handleSubmit() {
     console.log(searchInputOne.value);
