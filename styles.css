@@ -13,12 +13,15 @@ body {
    font-family:'UnifrakturCook', cursive; 
 }
 
+/* Navbar settup */
+
 .navbar {
     background-color: tan;
     display: flex;
     justify-content: space-around;
     align-items: center;
     font-size: 20px;
+    position:sticky;
 }
 
 .logo {
@@ -56,3 +59,71 @@ body {
 nav a:hover::before {
     width: 100%;
 }  
+
+/* Civilization selection section */
+
+
+.select {
+    border: solid 2px red;
+    margin: 10px;
+    text-align: center;
+}
+
+.civ-1-menu {
+    border: solid 2px blue;
+    margin: 2px;
+    align-content:center;
+}
+
+#civilization-1, #civilization-2 {
+    margin: 60px;
+    position: absolute;
+}
+
+.civ-2-menu {
+    border: solid 2px green;
+    margin: 2px;
+}
+
+#helmet-1 #helmet-2 {
+   width: 10%;
+   height: 10%;
+}
+
+#compare {
+    margin: 20px;
+}
+
+/* Civilization info section */
+
+.civ-info-container {
+    border: solid 2px red;
+    margin: 2px;
+}
+
+.civ-1-container {
+    border: solid 2px blue;
+    margin: 2px;
+}
+
+.civ-info-container {
+    border: solid 2px green;
+    margin: 2px;
+}
+
+.civ-1-name {
+    text-align: center;
+}
+
+.civ-2-name {
+    text-align: center;
+}
+
+
+/* Footer section */
+
+
+footer {
+    align-content: flex-end;
+    text-align: center;
+}
