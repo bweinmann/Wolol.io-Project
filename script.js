@@ -14,6 +14,9 @@ async function fetchCivInfo() {
     const civilizationData = res.data.civilizations;
     console.log(res.data);
     console.log(civilizationData[0].unique_tech);
+    civilizationData.forEach((civObject) => {
+    showCivilizationInfo(civObject);
+    })
   } catch(error) {
     displayErrorMessage();
   }
@@ -27,30 +30,55 @@ async function fetchCivInfo() {
     civilizationContainer.appendChild("errorImage");
   }
 
-  //we need to loop through the civilizations array to access the values.
+  //we need to loop through the civilizations array [0] through [32] to access the values.
   //note this should be inside the fetchCivInfo function
 
   //ex. console.log(civilizationData[0].name)
 
-  // function showCivilizationInfo(data) {
+  function showCivilizationInfo(data) {
+    console.log(data);
 
-  //   //Add civilization one name
-  //   const civilizationOneName = document.createElement("h2")
-  //   civilizationName.innerText = `${civilizationData.name}`; 
-  //   civilizationOne.appendChild(civilizationOneName);
+    //Add civilization one name
+    const civilizationOneName = civilizationOne;
+    civilizationOneName.innerText = `${data.civilizations.name}`; 
+    civilizationOne.appendChild(civilizationOneName);
   
-  //   ////Add civilization two name
-  //   const civilizationTwoName = document.createElement("h2")
-  //   civilizationName.innerText = `${civilizationData.name}`; 
-  //   civilizationTwo.appendChild(civilizationTwoName);
+    ////Add civilization two name
+    const civilizationTwoName = civilizationTwo
+    civilizationTwoName.innerText = `${data.civilizations.name}`; 
+    civilizationTwo.appendChild(civilizationTwoName);
   
-  //   //Add civilization one info
-  //   const civilizationOneInfo = document.createElement("h3");
-  //   civilizationOneInfo.innerText = `${civilizationData.}`;
-  //   civilizationOneAspects.appendChild();
+    //Add civilization one info
+    const civilizationOneInfo = civilizationOneAspects;
+    civilizationOneInfo.innerText = `${data.civilizations.name}`;
+    civilizationOneAspects.appendChild(civilizationOneInfo);
 
-  //   //Add civilization two info
-  //   const civilizationTwoInfo = document.createElement("h3");
-  //   civilizationTwoInfo.innerText = `${civilizationData.}`;
-  //   civilizationTwoAspects.appendChild(civilizationTwoInfo);
-  // }
+    //Add civilization two info
+    const civilizationTwoInfo = civilizationTwoAspects;
+    civilizationTwoInfo.innerText = `${data.civilizations.name}`;
+    civilizationTwoAspects.appendChild(civilizationTwoInfo);
+  }
+
+  // const searchForm = document.querySelector();
+  // const searchInput = document.querySelector();
+
+  // searchForm.addEventListener("submit", handleSubmit);
+
+  function handleSubmit(event) {
+    console.log(searchInput.value);
+    let inputValue = searchInput.value;
+    searchInput.value = "";
+    console.log(inputValue);
+    fetchCivInfo(inputValue);
+    removeCiv();
+  }
+
+  //Remove the previous civ info
+
+  function removeCivInfoContainer1() {
+
+  }
+
+  function removeCivInfoContainer2() {
+
+  }
