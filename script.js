@@ -28,16 +28,18 @@ async function fetchCivOneInfo() {
     const url = "https://age-of-empires-2-api.herokuapp.com/api/v1/civilizations";
     const res = await axios.get(`https://boiling-mountain-84087.herokuapp.com/${url}`);
     const civOneData = res.data.civilizations;
-    console.log(res.data);
-    // console.log(typeof res.data.civilizations);
+    // console.log(res.data);
+    console.log(res.data.civilizations);
     // console.log(typeof res.data.civilizations[0].civilization_bonus);
     // console.log(civilizationData[0].unique_tech);
-    // for (let index of civilizationData) {
-    //   console.log(index.name);
-    // }
+  //   for (let index of civOneData) {
+  //     console.log(index.name);
+  //  }
     // civOne = [...civOne, ...civOneData];
     // console.log(civOne);
+    
     showCivilizationOneName(civOneData);
+    // console.log(civ)
   } catch(error) {
     console.error(error);
     // displayErrorMessage();
@@ -51,10 +53,6 @@ fetchCivOneInfo();
 //     const url = "https://age-of-empires-2-api.herokuapp.com/api/v1/civilizations";
 //     const res = await axios.get(`https://boiling-mountain-84087.herokuapp.com/${url}`);
 //     const civilizationData = res.data.civilizations;
-//     console.log(res.data);
-//     console.log(typeof res.data.civilizations);
-//     console.log(typeof res.data.civilizations[0].civilization_bonus);
-//     // console.log(civilizationData[0].unique_tech);
 //     civilizationData.forEach((civObject) => {
 //     showCivilizationTwoInfo(civObject);
 //     })
@@ -79,16 +77,12 @@ fetchCivOneInfo();
   //ex. console.log(civilizationData[0].name)
 
   function showCivilizationOneName(civ) {
-    // console.log(data);
-
-    //Add civilization one name
-    // const civilizationOneName = civilizationOne;
-    let civArr = civ.res.data.civilizations;
-    for (let i = 0; i< civArr.length; i++) {
-        let civName = civArr[i].name;
-        let currentCivOneName = civilizationOne; 
-        currentCivOneName.innerHTML = `${civName}`;
-        civilizationOne.appendChild(civilizationOneName);
+    for (let i = 0; i< civ.length; i++) {
+        let name = civ[i].name;
+        // console.log(name);
+        // let currentCivOneName = civilizationOne; 
+        currentCivOneName.innerHTML = `${name}`;
+        civilizationOne.appendChild(currentCivOneName);
       }
   }
      //Add civilization one info
@@ -101,12 +95,12 @@ fetchCivOneInfo();
 
     ////Add civilization two name
     // const civilizationTwoName = civilizationTwo
-    // civilizationTwoName.innerText = `${data.civilizations.name}`; 
+    // civilizationTwoName.innerText = `${data.civilizations}`; 
     // civilizationTwo.appendChild(civilizationTwoName);
 
     //Add civilization two info
     // const civilizationTwoInfo = civilizationTwoAspects;
-    // civilizationTwoInfo.innerText = `${data.civilizations.name}`;
+    // civilizationTwoInfo.innerText = `${data.civilizations}`;
     // civilizationTwoAspects.appendChild(civilizationTwoInfo);
   // }
 
