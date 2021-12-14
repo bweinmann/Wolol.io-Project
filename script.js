@@ -27,18 +27,17 @@ async function fetchCivOneInfo() {
   try {
     const url = "https://age-of-empires-2-api.herokuapp.com/api/v1/civilizations";
     const res = await axios.get(`https://boiling-mountain-84087.herokuapp.com/${url}`);
-    const civilizationData = res.data.civilizations;
+    const civOneData = res.data.civilizations;
     console.log(res.data);
     // console.log(typeof res.data.civilizations);
     // console.log(typeof res.data.civilizations[0].civilization_bonus);
     // console.log(civilizationData[0].unique_tech);
-    for (let index of civilizationData) {
-      console.log(index.name);
-    }
-
-    civilizationData.forEach((civObject) => {
-    showCivilizationOneInfo(civObject);
-    })
+    // for (let index of civilizationData) {
+    //   console.log(index.name);
+    // }
+    // civOne = [...civOne, ...civOneData];
+    // console.log(civOne);
+    showCivilizationOneName(civOneData);
   } catch(error) {
     console.error(error);
     // displayErrorMessage();
@@ -79,18 +78,24 @@ fetchCivOneInfo();
 
   //ex. console.log(civilizationData[0].name)
 
-  function showCivilizationOneInfo(data) {
-    console.log(data);
+  function showCivilizationOneName(civ) {
+    // console.log(data);
 
     //Add civilization one name
-    const civilizationOneName = civilizationOne;
-    civilizationOneName.innerText = `${data.civilizations.name}`; 
-    civilizationOne.appendChild(civilizationOneName);
-
+    // const civilizationOneName = civilizationOne;
+    let civArr = civ.res.data.civilizations;
+    for (let i = 0; i< civArr.length; i++) {
+        let civName = civArr[i].name;
+        let currentCivOneName = civilizationOne; 
+        currentCivOneName.innerHTML = `${civName}`;
+        civilizationOne.appendChild(civilizationOneName);
+      }
+  }
      //Add civilization one info
-     const civilizationOneInfo = civilizationOneAspects;
-     civilizationOneInfo.innerText = `${data.civilizations}`;
-     civilizationOneAspects.appendChild(civilizationOneInfo);
+  // function showCivilizationOneAspects
+  //    const civilizationOneInfo = civilizationOneAspects;
+  //    civilizationOneInfo.innerText = `${data.civilizations}`;
+  //    civilizationOneAspects.appendChild(civilizationOneInfo);
   
   // function showCivilizationTwoInfo() {
 
@@ -132,7 +137,7 @@ fetchCivOneInfo();
 
   // function removeCivInfoContainer1() {
 
-  }
+  //}
 
   // function removeCivInfoContainer2() {
 
