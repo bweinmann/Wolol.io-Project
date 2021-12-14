@@ -111,11 +111,11 @@ nav a:hover::before {
     margin: 2px;
 }
 
-.civ-1-name {
+.civ-1-input {
     text-align: center;
 }
 
-.civ-2-name {
+.civ-2-input {
     text-align: center;
 }
 
