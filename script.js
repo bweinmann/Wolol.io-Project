@@ -23,53 +23,30 @@ const civilizationOneAspects = document.querySelector("#civ-1-aspects");
 const civilizationTwoAspects = document.querySelector("#civ-2-aspects")
 
 
-async function fetchCivOneInfo() {
+async function fetchCivInfo() {
   try {
     const url = "https://age-of-empires-2-api.herokuapp.com/api/v1/civilizations";
     const res = await axios.get(`https://boiling-mountain-84087.herokuapp.com/${url}`);
     const civOneData = res.data.civilizations;
     // console.log(res.data);
-    console.log(res.data.civilizations);
-    // console.log(typeof res.data.civilizations[0].civilization_bonus);
-    // console.log(civilizationData[0].unique_tech);
-  //   for (let index of civOneData) {
-  //     console.log(index.name);
-  //  }
-    // civOne = [...civOne, ...civOneData];
-    // console.log(civOne);
-    
-    showCivilizationOneName(civOneData);
-    // console.log(civ)
+    console.log(civOneData); 
+    showCivilizationOneName();
+    showCivilizationTwoName();
+
   } catch(error) {
     console.error(error);
     // displayErrorMessage();
   }
 }
 
-fetchCivOneInfo();
+fetchCivInfo();
 
-// async function fetchCivTwoInfo() {
-//   try {
-//     const url = "https://age-of-empires-2-api.herokuapp.com/api/v1/civilizations";
-//     const res = await axios.get(`https://boiling-mountain-84087.herokuapp.com/${url}`);
-//     const civilizationData = res.data.civilizations;
-//     civilizationData.forEach((civObject) => {
-//     showCivilizationTwoInfo(civObject);
-//     })
-//   } catch(error) {
-//     console.error(error);
-//     // displayErrorMessage();
-//   }
-// }
-
-//   fetchCivTwoInfo();
-
-  // function displayErrorMessage() {
-  //   const errorImage = document.createElement("img");
-  //   errorImage.src = "Assets/AOE-error.png"
-  //   errorImage.alt = "404 install error"
-  //   civilizationContainer.appendChild("errorImage");
-  // }
+  function displayErrorMessage() {
+    const errorImage = document.createElement("img");
+    errorImage.src = "Assets/AOE-error.png"
+    errorImage.alt = "404 install error"
+    civilizationContainer.appendChild("errorImage");
+  }
 
   //we need to loop through the civilizations array [0] through [32] to access the values.
   //note this should be inside the fetchCivInfo function
@@ -79,8 +56,6 @@ fetchCivOneInfo();
   function showCivilizationOneName(civ) {
     for (let i = 0; i< civ.length; i++) {
         let name = civ[i].name;
-        // console.log(name);
-        // let currentCivOneName = civilizationOne; 
         currentCivOneName.innerHTML = `${name}`;
         civilizationOne.appendChild(currentCivOneName);
       }
@@ -90,13 +65,14 @@ fetchCivOneInfo();
   //    const civilizationOneInfo = civilizationOneAspects;
   //    civilizationOneInfo.innerText = `${data.civilizations}`;
   //    civilizationOneAspects.appendChild(civilizationOneInfo);
-  
-  // function showCivilizationTwoInfo() {
 
-    ////Add civilization two name
-    // const civilizationTwoName = civilizationTwo
-    // civilizationTwoName.innerText = `${data.civilizations}`; 
-    // civilizationTwo.appendChild(civilizationTwoName);
+    function showCivilizationTwoName(civ) {
+      for (let i = 0; i< civ.length; i++) {
+          let name = civ[i].name;
+          currentCivTwoName.innerHTML = `${name}`;
+          civilizationTwo.appendChild(currentCivTwoName);
+        }
+    }
 
     //Add civilization two info
     // const civilizationTwoInfo = civilizationTwoAspects;
@@ -105,9 +81,9 @@ fetchCivOneInfo();
   // }
 
   const searchFormOne = document.querySelector(".civ-1-menu");
-  // const searchFormTwo = document.querySelector("civ-2-menu");
+  const searchFormTwo = document.querySelector("civ-2-menu");
   const searchInputOne = document.querySelector(".civilization-1");
-  // const searchInputTwo = document.querySelector("civilization-2");
+  const searchInputTwo = document.querySelector("civilization-2");
 
   searchFormOne.addEventListener("submit", handleSubmit);
 
