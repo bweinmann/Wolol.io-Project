@@ -13,7 +13,7 @@ async function fetchCivInfo() {
     const res = await axios.get(`https://boiling-mountain-84087.herokuapp.com/${url}`);
     const civilizationData = res.data.civilizations;
     console.log(res.data);
-    console.log(civilizationData[0].unique_tech);
+    // console.log(civilizationData[0].unique_tech);
     civilizationData.forEach((civObject) => {
     showCivilizationInfo(civObject);
     })
@@ -44,39 +44,41 @@ async function fetchCivInfo() {
     civilizationOne.appendChild(civilizationOneName);
   
     ////Add civilization two name
-    const civilizationTwoName = civilizationTwo
-    civilizationTwoName.innerText = `${data.civilizations.name}`; 
-    civilizationTwo.appendChild(civilizationTwoName);
+    // const civilizationTwoName = civilizationTwo
+    // civilizationTwoName.innerText = `${data.civilizations.name}`; 
+    // civilizationTwo.appendChild(civilizationTwoName);
   
     //Add civilization one info
     const civilizationOneInfo = civilizationOneAspects;
-    civilizationOneInfo.innerText = `${data.civilizations.name}`;
+    civilizationOneInfo.innerText = `${data.civilizations}`;
     civilizationOneAspects.appendChild(civilizationOneInfo);
 
     //Add civilization two info
-    const civilizationTwoInfo = civilizationTwoAspects;
-    civilizationTwoInfo.innerText = `${data.civilizations.name}`;
-    civilizationTwoAspects.appendChild(civilizationTwoInfo);
+    // const civilizationTwoInfo = civilizationTwoAspects;
+    // civilizationTwoInfo.innerText = `${data.civilizations.name}`;
+    // civilizationTwoAspects.appendChild(civilizationTwoInfo);
   }
 
-  // const searchForm = document.querySelector();
-  // const searchInput = document.querySelector();
+  const searchFormOne = document.querySelector("civ-1-menu");
+  // const searchFormTwo = document.querySelector("civ-2-menu");
+  const searchInputOne = document.querySelector("civilization-1");
+  // const searchInputTwo = document.querySelector("civilization-2");
 
-  // searchForm.addEventListener("submit", handleSubmit);
+  searchForm.addEventListener("submit", handleSubmit);
 
-  function handleSubmit(event) {
+  function handleSubmit() {
     console.log(searchInputOne.value);
-    console.log(searchInputTwo.value);
+    // console.log(searchInputTwo.value);
     let inputValueOne = searchInputOne.value;
-    let inputValueTwo = searchInputTwo.value;
+    // let inputValueTwo = searchInputTwo.value;
     searchInputOne.value = "";
-    searchInputTwo.value = "";
+    // searchInputTwo.value = "";
     console.log(inputValueOne);
-    console.log(inputValueOne);
+    // console.log(inputValueTwo);
     fetchCivInfoOne(inputValueOne);
-    fetchCivInfoOne(inputValueTwo);
+    // fetchCivInfoTwo(inputValueTwo);
     //do I need to remove seperately or together?
-    removeCivConctainer();
+    // removeCivConctainer();
   }
 
   //Remove the previous civ info
@@ -85,6 +87,16 @@ async function fetchCivInfo() {
 
   }
 
-  function removeCivInfoContainer2() {
+  // function removeCivInfoContainer2() {
 
-  }
+  // }
+
+  //filtering out key:values in the civ object
+
+  // function filterCivOneObject() {
+  //   for (let value of Object.values(civilizationData)) {
+  //     if (Object.keys === ("name" || "id") {
+  //       value = null;
+  //     }
+  //   }
+  // }
