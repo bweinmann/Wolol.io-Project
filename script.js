@@ -65,12 +65,18 @@ async function fetchCivInfo() {
   // searchForm.addEventListener("submit", handleSubmit);
 
   function handleSubmit(event) {
-    console.log(searchInput.value);
-    let inputValue = searchInput.value;
-    searchInput.value = "";
-    console.log(inputValue);
-    fetchCivInfo(inputValue);
-    removeCiv();
+    console.log(searchInputOne.value);
+    console.log(searchInputTwo.value);
+    let inputValueOne = searchInputOne.value;
+    let inputValueTwo = searchInputTwo.value;
+    searchInputOne.value = "";
+    searchInputTwo.value = "";
+    console.log(inputValueOne);
+    console.log(inputValueOne);
+    fetchCivInfoOne(inputValueOne);
+    fetchCivInfoOne(inputValueTwo);
+    //do I need to remove seperately or together?
+    removeCivConctainer();
   }
 
   //Remove the previous civ info
