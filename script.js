@@ -27,15 +27,15 @@ async function fetchCivInfo() {
   try {
     const url = "https://age-of-empires-2-api.herokuapp.com/api/v1/civilizations";
     const res = await axios.get(`https://boiling-mountain-84087.herokuapp.com/${url}`);
-    const civ1Data = res.data.civilizations;
+    const civData = res.data.civilizations;
     // console.log(res.data);
-    console.log(civ1Data); 
-    showciv1Name(civ1Data);
-    // showcivTwoName();
+    console.log(civData); 
+    // showciv1Name(civData);
+    // showciv2Name(civData);
 
   } catch(error) {
     console.error(error);
-    // displayErrorMessage();
+    displayErrorMessage();
   }
 }
 
@@ -51,12 +51,12 @@ fetchCivInfo();
   function showciv1Name(civ) {
     // console.log(civ);
     const currentCiv1Name = document.createElement("h1");
-    
+
     for (let i = 0; i< civ.length; i++) {
         let name = civ[i].name;
-        console.log(name);
-        currentCiv1Name.innerHTML = `${name}`;
-        civ1Name.appendChild(currentCiv1Name);
+        // console.log(civ[i].name);
+        // currentCiv1Name.innerHTML = `${name}`;
+        // civ1Name.appendChild(currentCiv1Name);
       }
   }
      //Add civ 1 info
@@ -65,13 +65,14 @@ fetchCivInfo();
   //    civ1Info.innerText = `${data.civs}`;
   //    civ1Aspects.appendChild(civ1Info);
 
-    // function showcivTwoName(civ) {
-    //   for (let i = 0; i< civ.length; i++) {
-    //       let name = civ[i].name;
-    //       currentCivTwoName.innerHTML = `${name}`;
-    //       civTwo.appendChild(currentCivTwoName);
-    //     }
-    // }
+    function showciv2Name(civ) {
+      for (let i = 0; i< civ.length; i++) {
+          let name = civ[i].name;
+          console.log(name);
+          // currentCiv2Name.innerHTML = `${name}`;
+          // civ2Name.appendChild(currentCiv2Name);
+        }
+    }
 
     //Add civ two info
     // const civTwoInfo = civTwoAspects;
@@ -80,23 +81,24 @@ fetchCivInfo();
   // }
 
   const searchForm1 = document.querySelector(".civ-1-menu");
-  const searchFormTwo = document.querySelector("civ-2-menu");
+  const searchForm2 = document.querySelector("civ-2-menu");
   const searchInput1 = document.querySelector(".civ-1");
-  const searchInputTwo = document.querySelector("civ-2");
+  const searchInput2 = document.querySelector("civ-2");
 
   searchForm1.addEventListener("submit", handleSubmit);
+  // searchForm2.addEventListener("submit", handleSubmit);
 
   function handleSubmit() {
     console.log(searchInput1.value);
-    // console.log(searchInputTwo.value);
+    // console.log(searchInput2.value);
     let inputValue1 = searchInput1.value;
-    // let inputValueTwo = searchInputTwo.value;
+    // let inputValue2 = searchInput2.value;
     searchInput1.value = "";
-    // searchInputTwo.value = "";
+    // searchInput2.value = "";
     console.log(inputValue1);
-    // console.log(inputValueTwo);
+    // console.log(inputValue2);
     fetchCivInfo(inputValue1);
-    // fetchCivInfoTwo(inputValueTwo);
+    // fetchCivInfo(inputValue2);
 
     //do I need to remove seperately or together?
     removeCivInfoContainer();
