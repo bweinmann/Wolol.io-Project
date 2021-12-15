@@ -36,9 +36,6 @@ async function fetchCivInfo() {
     const civData = res.data.civilizations;
     console.log(civData);
     civInfo = civData;
-    // civData.forEach((civObj) => {
-    //   (civObj);
-    // })
     selectCiv(civData)
   } catch(error) {
     console.error(error);
@@ -48,24 +45,16 @@ async function fetchCivInfo() {
 
 fetchCivInfo();
 
-
-
 function selectCiv (civ) {
   console.log(civ)
   for (let i = 0; i< civ.length; i++) {
-  let name = civ[i].name;
-  // let expansion = civ[i].expansion;
-  // console.log(expansion);
+  let name = civ[i].name
   let civ1Selection = document.createElement("option");
   let civ2Selection = document.createElement("option");
   civ1Selection.innerHTML = `${name}`;
   civ2Selection.innerHTML = `${name}`;
   civ1List.appendChild(civ1Selection)
   civ2List.appendChild(civ2Selection) 
-  // civ1Selection.value = i;
-  // civ2Selection.value = i;
-  // civ1Aspects.appendChild(civ1Selection);
-  // civ1Aspects.appendChild(civ2Selection);
 }
 }
 
@@ -82,6 +71,7 @@ function selectCiv (civ) {
        return civ.name === civ1;
      })
      showCiv1ArmyType(foundCiv);
+     showTeamBonus1(foundCiv);
       console.log(foundCiv);
       const civ1Input = document.createElement("h1");   
         civ1Input.innerText = `${civ1}`;     
@@ -89,7 +79,12 @@ function selectCiv (civ) {
           
       }
 
-   function showCivName2(civ2) {      
+   function showCivName2(civ2) {  
+    const foundCiv = civInfo.find(civ => {
+      return civ.name === civ2;
+    })    
+    showCiv2ArmyType(foundCiv);
+    showTeamBonus2(foundCiv);
     const civ2Input = document.createElement("h1");        
     civ2Input.innerText = `${civ2}`;       
     civ2Name.appendChild(civ2Input)         
@@ -107,19 +102,18 @@ function selectCiv (civ) {
       civ2Aspects.appendChild(civ2AT);
     }
 
-    // }
-    // function showciv2Expansion(civ2) {
-    //   const civ2Exp = document.createElement("li");
-    //   let expansion = 
-    //   console.log(expansion);
-    //   civ2Aspects.appendChild(civ2Exp);
-    // }
-    
-    //Add civ two info
-    // const civTwoInfo = civTwoAspects;
-    // civTwoInfo.innerText = `${data.civs}`;
-    // civTwoAspects.appendChild(civTwoInfo);
-  // }
+    function showTeamBonus1(civ) {
+      const civ1TB = document.createElement("li")
+      civ1TB.innerText = `${civ.team_bonus}`
+      civ1Aspects.appendChild(civ1TB);
+    }
+
+    function showTeamBonus2(civ) {
+      const civ2TB = document.createElement("li")
+      civ2TB.innerText = `${civ.team_bonus}`
+      civ2Aspects.appendChild(civ2TB);
+    }
+
 
   const searchForm1 = document.querySelector("#select-civ-1");
   const searchForm2 = document.querySelector("#select-civ-2");
