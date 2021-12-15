@@ -106,6 +106,12 @@ nav a:hover::before {
     margin: 2px;
 }
 
+.civ-2-container {
+    border: solid 5px white;
+    margin: 2px;
+}
+}
+
 .civ-info-container {
     border: solid 2px green;
     margin: 2px;

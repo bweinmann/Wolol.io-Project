@@ -26,16 +26,19 @@
     <div class="select">
         <form class="civ-1-menu">
             <img id="helmet-1" src="Assets/AoE2-DLCicon-0.png" alt="helmet-1">
-            <input type="text" name="civilization-1" placeholder="Select Civilization" id="civilization-1"/>
-
+            <!-- <input type="text" name="civilization-1" placeholder="Select Civilization" id="civilization-1"/> -->
+            <select id = "select-civ-1">
+                <option class = "civ-1-list" hidden default selected="false"></option>
+            </select>
         </form>
         <form class="civ-2-menu">
             <img src="Assets/AoE2-DLCicon-2.png" alt="helmet-2">
-            <input type="text" name="civilization-2" placeholder="Select Civilization" id="civilization-2"/>
+            <!-- <input type="text" name="civilization-2" placeholder="Select Civilization" id="civilization-2"/> -->
+            <select id = "select-civ-2">
+                <option class = "civ-2-list" hidden default selected="false"></option>
+            </select>
         </form>
-        <button id="compare">
-            Compare
-        </button>
+    
         <!-- <div class="civ-1-select">
 
         </div>
@@ -46,7 +49,7 @@
     <div class= "civ-info-container">
         <div class="civ-1-container">
             <div class="civ-1-input">
-                <h1 id="civ-1-name">Civilization 1</h1>
+                <h1 id="civ-1-name"></h1>
             </div>
             <div class= "civ-1-info">
                 <h2 id="civ-1-aspects">Unique Aspects</h2>
@@ -55,7 +58,10 @@
     
         <div class="civ-2-container">
             <div class="civ-2-input">
-                <h1 id="civ-2-name">Civilization 2</h1>
+                <h1></h1>
+                <div id="civ-2-name">
+
+                </div>
             </div>
             <div class= "civ-2-info">
                 <h2 id="civ-2-aspects">Unique Aspects</h2>
