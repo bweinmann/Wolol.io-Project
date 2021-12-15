@@ -29,8 +29,13 @@ async function fetchCivInfo() {
     const res = await axios.get(`https://boiling-mountain-84087.herokuapp.com/${url}`);
     const civData = res.data.civilizations;
     // console.log(res.data);
-    console.log(civData); 
-    // showciv1Name(civData);
+    console.log(res.data);
+    console.log(civData);
+    civData.forEach((civObj) => {
+      showcivName(civObj)
+    });
+    
+    // showcivName(civData);
     // showciv2Name(civData);
 
   } catch(error) {
@@ -48,31 +53,36 @@ fetchCivInfo();
     civContainer.appendChild("errorImage");
   }
 
-  function showciv1Name(civ) {
+  function showcivName(civ) {
     // console.log(civ);
     const currentCiv1Name = document.createElement("h1");
+    // const currentCiv2Name = document.createElement("h2");
 
-    for (let i = 0; i< civ.length; i++) {
-        let name = civ[i].name;
-        // console.log(civ[i].name);
-        // currentCiv1Name.innerHTML = `${name}`;
-        // civ1Name.appendChild(currentCiv1Name);
+    // for (let i = 0; i< civ.length; i++) {
+    //     let name = civ[i].name;
+    //     console.log(civ[i].name);
+    console.log(`${civ.name}`)
+        currentCiv1Name.innerHTML = `${civ.name}`;
+        // currentCiv2Name.innerHTLM = `${name}`;
+        civ1Name.appendChild(currentCiv1Name);
+        // civ2Name.appendChild(currentCiv2Name);
+
       }
-  }
+  
      //Add civ 1 info
   // function showciv1Aspects
   //    const civ1Info = civ1Aspects;
   //    civ1Info.innerText = `${data.civs}`;
   //    civ1Aspects.appendChild(civ1Info);
 
-    function showciv2Name(civ) {
-      for (let i = 0; i< civ.length; i++) {
-          let name = civ[i].name;
-          console.log(name);
-          // currentCiv2Name.innerHTML = `${name}`;
-          // civ2Name.appendChild(currentCiv2Name);
-        }
-    }
+    // function showciv2Name(civ) {
+    //   for (let i = 0; i< civ.length; i++) {
+    //       let name = civ[i].name;
+    //       console.log(name);
+    //       // currentCiv2Name.innerHTML = `${name}`;
+    //       // civ2Name.appendChild(currentCiv2Name);
+    //     }
+    // }
 
     //Add civ two info
     // const civTwoInfo = civTwoAspects;
@@ -81,14 +91,15 @@ fetchCivInfo();
   // }
 
   const searchForm1 = document.querySelector(".civ-1-menu");
-  const searchForm2 = document.querySelector("civ-2-menu");
+  // const searchForm2 = document.querySelector(".civ-2-menu");
   const searchInput1 = document.querySelector(".civ-1");
-  const searchInput2 = document.querySelector("civ-2");
+  // const searchInput2 = document.querySelector(".civ-2");
 
   searchForm1.addEventListener("submit", handleSubmit);
   // searchForm2.addEventListener("submit", handleSubmit);
 
   function handleSubmit() {
+    removeCivInfoContainer();
     console.log(searchInput1.value);
     // console.log(searchInput2.value);
     let inputValue1 = searchInput1.value;
@@ -101,13 +112,14 @@ fetchCivInfo();
     // fetchCivInfo(inputValue2);
 
     //do I need to remove seperately or together?
-    removeCivInfoContainer();
+    // removeCivInfoContainer();
   }
 
   //Remove the previous civ info
 
   function removeCivInfoContainer() {
-      civContainer.innerHTML = "";
+      civ1Name.innerHTML = "";
+      civ2Name.innerHTML = "";
   }
 
   // function removeCivInfoContainer2() {
