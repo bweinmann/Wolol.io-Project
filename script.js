@@ -16,7 +16,8 @@
 //need to exclude the name and the id, how?
 //not sure, somehow need to target the name and id key:value pair and remove...
 
-const civContainer = document.querySelector(".civ-info-container");
+const civ1Container = document.querySelector(".civ-1-container");
+const civ2Container = document.querySelector(".civ-2-container");
 const civ1Name = document.querySelector("#civ-1-name");
 const civ2Name = document.querySelector("#civ-2-name");
 const civ1Aspects = document.querySelector("#civ-1-aspects");
@@ -119,28 +120,27 @@ fetchCivInfo();
   searchForm2.addEventListener("change", handleSubmit2);
 
   function handleSubmit1(event) {
-    // removeCivInfoContainer();
+    removeCivInfoContainer1()
+    event.preventDefault();
     let inputValue1 = document.getElementById("select-civ-1");
     let newInput1 = inputValue1.options[inputValue1.selectedIndex].value
     showCivName1(newInput1);
-    // removeCivInfoContainer1()
-    
   }
 
   function handleSubmit2(event) {
+    event.preventDefault();
     let inputValue2 = document.getElementById("select-civ-2");
     let newInput2 = inputValue2.options[inputValue2.selectedIndex].value
-    // console.log(newInput2)
     showCivName2(newInput2);
     // removeCivInfoContainer2()
    
   }
   //Remove the previous civ info
 
-//   function removeCivInfoContainer1() {
-//       civ1Name.innerHTML = "";
+  function removeCivInfoContainer1() {
+      civ1Container.innerHTML = "";
       
-//   }
+  }
 
 //   function removeCivInfoContainer2() {
 //     civ2Name.innerHTML = "";
