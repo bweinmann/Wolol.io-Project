@@ -25,7 +25,7 @@ const civ1Input = document.querySelector("#civilization-1");
 const civ2Input = document.querySelector("#civilization-2");
 const civ1List = document.querySelector("#select-civ-1");
 const civ2List = document.querySelector("#select-civ-2");
-const civInput2 = document.querySelector(".civ-2-input");
+
 
 async function fetchCivInfo() {
   try {
@@ -74,7 +74,7 @@ fetchCivInfo();
           civ2Input.innerText = `${civ2}`;
           
           
-          civInput2.appendChild(civ2Input);
+          civ2Name.appendChild(civ2Input);
           
         }
 
@@ -95,20 +95,15 @@ fetchCivInfo();
 
 
      //Add civ 1 info
-  // function showciv1Aspects
-  //    const civ1Info = civ1Aspects;
+  // function showciv1Aspects(civ1) {
+
+  //    const civ1Info = document.createElement("h2")
+
   //    civ1Info.innerText = `${data.civs}`;
+
   //    civ1Aspects.appendChild(civ1Info);
-
-    // function showciv2Name(civ) {
-    //   for (let i = 0; i< civ.length; i++) {
-    //       let name = civ[i].name;
-    //       console.log(name);
-    //       // currentCiv2Name.innerHTML = `${name}`;
-    //       // civ2Name.appendChild(currentCiv2Name);
-    //     }
-    // }
-
+  // }
+    
     //Add civ two info
     // const civTwoInfo = civTwoAspects;
     // civTwoInfo.innerText = `${data.civs}`;
@@ -128,9 +123,8 @@ fetchCivInfo();
     let inputValue1 = document.getElementById("select-civ-1");
     let newInput1 = inputValue1.options[inputValue1.selectedIndex].value
     showCivName1(newInput1);
+    // removeCivInfoContainer1()
     
-   
-   
   }
 
   function handleSubmit2(event) {
@@ -138,14 +132,20 @@ fetchCivInfo();
     let newInput2 = inputValue2.options[inputValue2.selectedIndex].value
     // console.log(newInput2)
     showCivName2(newInput2);
+    // removeCivInfoContainer2()
+   
   }
   //Remove the previous civ info
 
-  function removeCivInfoContainer() {
-      civ1Name.innerHTML = "";
-      civ2Name.innerHTML = "";
-  }
+//   function removeCivInfoContainer1() {
+//       civ1Name.innerHTML = "";
+      
+//   }
 
+//   function removeCivInfoContainer2() {
+//     civ2Name.innerHTML = "";
+    
+// }
   // function removeCivInfoContainer2() {
 
   // }
