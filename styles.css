@@ -73,13 +73,13 @@ nav a:hover::before {
 
 
 .select {
-    border: solid 2px red;
+    /* border: solid 2px red; */
     margin: 10px;
     text-align: center;
 }
 
 .civ-1-menu {
-    border: solid 2px blue;
+    /* border: solid 2px blue; */
     margin: 2px;
     align-content:center;
 }
@@ -90,7 +90,7 @@ nav a:hover::before {
 }
 
 .civ-2-menu {
-    border: solid 2px green;
+    /* border: solid 2px green; */
     margin: 2px;
 }
 
@@ -106,25 +106,34 @@ nav a:hover::before {
 /* Civilization info section */
 
 .civ-info-container {
-    border: solid 2px red;
+    /* border: solid 2px red; */
     margin: 2px;
 }
 
-.civ-1-container {
-    border: solid 2px blue;
-    margin: 2px;
+.civ-1-container  {
+    border: solid 5px black;
+    margin: 50px 10px;
+    background-color: rgba(223, 168, 80, 0.5);
+}
+
+.civ-1-container:hover {
+    background-color: rgba(223, 168, 80, 0.8);
 }
 
 .civ-2-container {
-    border: solid 5px white;
-    margin: 2px;
+    border: solid 5px black;
+    margin: 50px 10px;
+    background-color: rgba(223, 168, 80, 0.5);
 }
 
+.civ-2-container:hover {
+    background-color: rgba(223, 168, 80, 0.8);
+}
 
-.civ-info-container {
+/* .civ-info-container {
     border: solid 5px green;
     margin: 2px;
-}
+} */
 
 .civ-1-input {
     text-align: center;
