@@ -10,6 +10,7 @@
 body {
    background-image: url("Assets/PNG files/AOE-background.jpg.jpg");
    background-size: cover;
+   background-repeat: no-repeat;
    font-family:'UnifrakturCook', cursive; 
 }
 
@@ -110,7 +111,7 @@ nav a:hover::before {
     border: solid 5px white;
     margin: 2px;
 }
-}
+
 
 .civ-info-container {
     border: solid 2px green;

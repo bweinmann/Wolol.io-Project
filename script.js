@@ -26,6 +26,8 @@ const civ1Input = document.querySelector("#civilization-1");
 const civ2Input = document.querySelector("#civilization-2");
 const civ1List = document.querySelector("#select-civ-1");
 const civ2List = document.querySelector("#select-civ-2");
+const civ1Info = document.querySelector(".civ-1-info");
+const civ2Info = document.querySelector(".civ-2-info");
 
 let civInfo = [];
 
@@ -72,6 +74,7 @@ function selectCiv (civ) {
      })
      showCiv1ArmyType(foundCiv);
      showTeamBonus1(foundCiv);
+     showCivilizatoinBonus1(foundCiv)
       console.log(foundCiv);
       const civ1Input = document.createElement("h1");   
         civ1Input.innerText = `${civ1}`;     
@@ -79,12 +82,14 @@ function selectCiv (civ) {
           
       }
 
-   function showCivName2(civ2) {  
+   function showCiv2(civ2) {  
+    removeCivInfoContainer2()
     const foundCiv = civInfo.find(civ => {
       return civ.name === civ2;
     })    
     showCiv2ArmyType(foundCiv);
     showTeamBonus2(foundCiv);
+    showCivilizatoinBonus2(foundCiv)
     const civ2Input = document.createElement("h1");        
     civ2Input.innerText = `${civ2}`;       
     civ2Name.appendChild(civ2Input)         
@@ -114,6 +119,18 @@ function selectCiv (civ) {
       civ2Aspects.appendChild(civ2TB);
     }
 
+    function showCivilizatoinBonus1(civ) {
+      const civ1Bonus = document.createElement("li")
+      civ1Bonus.innerText = `${civ.civilization_bonus}`
+      civ1Aspects.appendChild(civ1Bonus);
+    }
+
+    function showCivilizatoinBonus2(civ) {
+      const civ2Bonus = document.createElement("li")
+      civ2Bonus.innerText = `${civ.civilization_bonus}`
+      civ2Aspects.appendChild(civ2Bonus);
+    }
+
 
   const searchForm1 = document.querySelector("#select-civ-1");
   const searchForm2 = document.querySelector("#select-civ-2");
@@ -128,7 +145,6 @@ function selectCiv (civ) {
     let inputValue1 = document.getElementById("select-civ-1");
     let newInput1 = inputValue1.options[inputValue1.selectedIndex].value
     showCiv1(newInput1);
-    // showciv1Expansion(newInput1);
     
   }
 
@@ -136,19 +152,19 @@ function selectCiv (civ) {
     event.preventDefault();
     let inputValue2 = document.getElementById("select-civ-2");
     let newInput2 = inputValue2.options[inputValue2.selectedIndex].value
-    showCivName2(newInput2);
-
-    // removeCivInfoContainer2()
-   
+    showCiv2(newInput2);
+  
   }
   //Remove the previous civ info
 
   function removeCivInfoContainer1() {
-      civ1Name.innerText = "";  
+      civ1Name.innerText = "";
+      civ1Aspects.innerText = "";  
   }
 
   function removeCivInfoContainer2() {
-    civ2Container.innerHTML = "";  
+      civ2Name.innerHTML = ""; 
+      civ2Aspects.innerText = "";
 }
 
   //filtering out key:values in the civ object
