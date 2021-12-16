@@ -97,37 +97,37 @@ function selectCiv (civ) {
 
    function showCiv1ArmyType(civ) {
     const civ1AT = document.createElement("li")
-    civ1AT.innerText = `${civ.army_type}`
+    civ1AT.innerText = `Army Type: ${civ.army_type}`
     civ1Aspects.appendChild(civ1AT);
   }
 
     function showCiv2ArmyType(civ) {
       const civ2AT = document.createElement("li")
-      civ2AT.innerText = `${civ.army_type}`
+      civ2AT.innerText = `Army Type: ${civ.army_type}`
       civ2Aspects.appendChild(civ2AT);
     }
 
     function showTeamBonus1(civ) {
       const civ1TB = document.createElement("li")
-      civ1TB.innerText = `${civ.team_bonus}`
+      civ1TB.innerText = `Team Bonus: ${civ.team_bonus}`
       civ1Aspects.appendChild(civ1TB);
     }
 
     function showTeamBonus2(civ) {
       const civ2TB = document.createElement("li")
-      civ2TB.innerText = `${civ.team_bonus}`
+      civ2TB.innerText = `Team Bonus: ${civ.team_bonus}`
       civ2Aspects.appendChild(civ2TB);
     }
 
     function showCivilizatoinBonus1(civ) {
       const civ1Bonus = document.createElement("li")
-      civ1Bonus.innerText = `${civ.civilization_bonus}`
+      civ1Bonus.innerText = `Civilization Bonus: ${civ.civilization_bonus}`
       civ1Aspects.appendChild(civ1Bonus);
     }
 
     function showCivilizatoinBonus2(civ) {
       const civ2Bonus = document.createElement("li")
-      civ2Bonus.innerText = `${civ.civilization_bonus}`
+      civ2Bonus.innerText = `Civilization Bonus: ${civ.civilization_bonus}`
       civ2Aspects.appendChild(civ2Bonus);
     }
 
