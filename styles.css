@@ -61,6 +61,10 @@ nav a:hover::before {
     width: 100%;
 }  
 
+@media only screen and (max-width: 860px) {
+    
+}
+
 /* Civilization selection section */
 
 
@@ -114,7 +118,7 @@ nav a:hover::before {
 
 
 .civ-info-container {
-    border: solid 2px green;
+    border: solid 5px green;
     margin: 2px;
 }
 
