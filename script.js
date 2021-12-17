@@ -3,13 +3,22 @@
 
 
 
-const menu_btn = document.querySelector(".hamburger");
+// const menu_btn = document.querySelector(".hamburger");
 
 // menu_btn.addEventListener('click', function () {
 //   menu_btn.classList.toggle('is-active')
 // })
 
-
+window.onscroll = function() {stickyNav()};
+let navbar = document.querySelector(".navbar");
+let sticky = navbar.offsetTop;
+function stickyNav() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky"); 
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
 
 
 
