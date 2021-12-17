@@ -1,20 +1,18 @@
 //https://age-of-empires-2-api.herokuapp.com/docs/
 
-//what is the overall structure of the data set?
-//civs is an object that contains an array of 32 objects, 
-//each of the 32 objects contains an object with the exception of civ bonus,
-//unique tech and unique unit. 
-//*Note that some unique techs and unit contain an empty array*
 
-//how to target the name?
-//iterate through the civs array to select civs[i].name
 
-//how to target the array inside 1 of the 32 objects?
-//iterate through the array of the civizilization[i].object
 
-//how to target the civ aspects?
-//need to exclude the name and the id, how?
-//not sure, somehow need to target the name and id key:value pair and remove...
+const menu_btn = document.querySelector(".hamburger");
+
+// menu_btn.addEventListener('click', function () {
+//   menu_btn.classList.toggle('is-active')
+// })
+
+
+
+
+
 
 const civ1Container = document.querySelector(".civ-1-container");
 const civ2Container = document.querySelector(".civ-2-container");
@@ -28,6 +26,8 @@ const civ1List = document.querySelector("#select-civ-1");
 const civ2List = document.querySelector("#select-civ-2");
 const civ1Info = document.querySelector(".civ-1-info");
 const civ2Info = document.querySelector(".civ-2-info");
+
+
 
 let civInfo = [];
 
@@ -166,13 +166,3 @@ function selectCiv (civ) {
       civ2Name.innerHTML = ""; 
       civ2Aspects.innerText = "";
 }
-
-  //filtering out key:values in the civ object
-
-  // function filterCiv1Object() {
-  //   for (let value of Object.values(civData)) {
-  //     if (Object.keys === ("name" || "id") {
-  //       value = null;
-  //     }
-  //   }
-  //
