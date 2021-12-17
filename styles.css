@@ -161,8 +161,40 @@ option {
 
 /* Footer section */
 
-
-footer {
-    align-content: flex-end;
-    text-align: center;
+.inner-footer{
+    margin: 0;
+    padding: 0;
+    background-color: tan;
 }
+
+.social-links{
+    display: flex;
+}
+
+.social-links ul{
+    display: flex;
+}
+
+.social-items{
+    list-style: none;
+}
+
+.social-items img{
+    padding: 10px 20px;
+    font-size: 30px;
+}
+
+.navigate-up::before {
+    content:'';
+    display: block;
+    height: 5px;
+    width: 100%;
+    background-color: brown;
+    top: 0;
+    width: 0%;
+    transition: all ease-in-out 250ms;
+}
+
+.navigate-up:hover::before {
+    width: 100%;
+}  
