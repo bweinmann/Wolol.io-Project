@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap");
 
+html{
+    height: 100%;
+}
 
 *{
     box-sizing: border-box;
@@ -12,6 +15,9 @@ body {
    background-size: cover;
    background-repeat: no-repeat;
    font-family:'UnifrakturCook', cursive; 
+   min-height: 100%;
+   display: flex;
+   flex-direction: column;
 }
 
 /* Navbar settup */
@@ -161,10 +167,13 @@ option {
 
 /* Footer section */
 
-.inner-footer{
-    margin: 0;
-    padding: 0;
+.footer {
+    height: 50px;
     background-color: tan;
+    margin-top: auto;
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
 }
 
 .social-links{
@@ -172,29 +181,21 @@ option {
 }
 
 .social-links ul{
+    padding: 10px;
     display: flex;
+    width: 300px;
+    height: 30px;
+   
 }
 
 .social-items{
     list-style: none;
 }
 
-.social-items img{
+.social-items a{
     padding: 10px 20px;
     font-size: 30px;
+    color: black;
+    
 }
 
-.navigate-up::before {
-    content:'';
-    display: block;
-    height: 5px;
-    width: 100%;
-    background-color: brown;
-    top: 0;
-    width: 0%;
-    transition: all ease-in-out 250ms;
-}
-
-.navigate-up:hover::before {
-    width: 100%;
-}  
