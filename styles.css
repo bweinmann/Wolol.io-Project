@@ -45,7 +45,7 @@ label {
  nav li a { 
     font-weight: 800;
     font-size: 25px;
-    color: #444;
+    color: black;
     text-decoration: none;
     text-transform: uppercase;  
 }
@@ -73,40 +73,49 @@ nav a:hover::before {
 
 
 .select {
-    /* border: solid 2px red; */
-    margin: 10px;
+    padding: 50px;
     text-align: center;
+    justify-content: space-evenly;
+    display: flex;
 }
 
+
 .civ-1-menu {
-    /* border: solid 2px blue; */
+    display: inline-block;
     margin: 2px;
     align-content:center;
 }
 
-#civilization-1, #civilization-2 {
-    margin: 60px;
-    position: absolute;
-}
 
 .civ-2-menu {
-    /* border: solid 2px green; */
+    display: inline-block;
     margin: 2px;
+    align-content:center;
 }
 
-#helmet-1 #helmet-2 {
-   width: 10%;
-   height: 10%;
+select {
+    font-family:'UnifrakturCook', cursive;
+    font-size: 1.6rem; 
+    border-radius: 4px;
+    color: black;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: tan;
+    border: solid 5px black;
 }
 
-#compare {
-    margin: 20px;
+option {
+    background: tan;
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.7);
+    justify-content: space-between;
+    font-size: 1.6rem;
 }
 
 /* Civilization info section */
 
 .civ-info-container {
-    /* border: solid 2px red; */
     margin: 2px;
 }
 
@@ -114,26 +123,32 @@ nav a:hover::before {
     border: solid 5px black;
     margin: 50px 10px;
     background-color: rgba(223, 168, 80, 0.5);
+    font-size: 15px;
+    border-radius: 4px;
 }
 
 .civ-1-container:hover {
     background-color: rgba(223, 168, 80, 0.8);
+    font-size: 20px;
 }
 
 .civ-2-container {
     border: solid 5px black;
     margin: 50px 10px;
     background-color: rgba(223, 168, 80, 0.5);
+    font-size: 15px;
+    border-radius: 4px;
 }
 
 .civ-2-container:hover {
     background-color: rgba(223, 168, 80, 0.8);
+    font-size: 20px;
 }
 
-/* .civ-info-container {
-    border: solid 5px green;
+.civ-info-container {
+    /* border: solid 5px green; */
     margin: 2px;
-} */
+}
 
 .civ-1-input {
     text-align: center;
