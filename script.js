@@ -20,6 +20,8 @@ function stickyNav() {
   }
 }
 
+let audio = new Audio();
+audio.src= "Assets/drumpapappa.mp3";
 
 
 
